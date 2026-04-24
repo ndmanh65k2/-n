@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/font/fontawesome-free-6.1.2/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+            body{
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+ul {
+  padding: 0 !important;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  right:0;
+  left:0;
+  z-index: 10000;
+}
+
+.topbar {
+  background: #f2f2f2;
+  height: 31px;
+}
+.topbar_right-text {
+  color: #666666d9;
+  display: inline-block;
+}
+.topbar_right-text:hover {
+  text-decoration: none;
+  color: rgba(17, 17, 17, 0.85);
+}
+.topbar_right-item {
+  padding: 5px 0;
+}
+.divider-vertical {
+  width: 2px;
+  height: 12px;
+  background: #e4e4e4;
+  transform: translate(87px, -17px);
+}
+
+/* header_main */
+.header_main {
+  height: 90px;
+}
+/*header_main-left */
+
+.logo-img {
+  width: 257px;
+  height: 71px;
+}
+
+/* header_main-mid */
+.btn_input {
+  padding: 10px;
+  font-size: 17px;
+  border: 1px solid #ddd;
+  float: left;
+  width: 644px;
+  height: 34px;
+  background: #ffffff;
+}
+
+.btn_icon {
+  float: left;
+  width: 34px;
+  height: 34px;
+  padding: 10px;
+  background: #f47920;
+  color: white;
+  font-size: 17px;
+  border: 1px solid #ddd;
+  border-left: none;
+  cursor: pointer;
+}
+.btn_input:focus-visible {
+  outline: #eaeaea solid 1px;
+}
+.btn_icon:focus {
+  outline: #eaeaea solid 1px;
+}
+.fa-magnifying-glass {
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: middle;
+  position: relative;
+  top: -7.5px;
+  right: 2px;
+}
+.btn_icon:hover {
+  background: rgba(244, 121, 32, 0.9);
+}
+
+/* Clear floats */
+.btn_input::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* header_main-right */
+.btn_cart {
+  width: 130px;
+  height: 32px;
+  background: #0f8fda;
+  border-radius: 999px;
+  padding: 5px;
+  margin-right: 100px;
+}
+.btn_cart:hover {
+  text-decoration: none;
+}
+.btn_cart-title,
+.fa-cart-shopping {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  align-items: center;
+}
+/* header_bottom */
+.header_bottom {
+  width: 100%;
+  height: 44px;
+  background: #232323;
+  /* position: fixed; */
+}
+
+/* header_bottom-left */
+
+.dropbtn {
+  width: 230px;
+  height: 44px;
+  background-color: #f47920;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.dropbtn:focus {
+  outline: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  height: 42px;
+  width: 230px;
+  color: rgba(34, 13, 13, 1);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  border: 1px solid #eaeaea;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  text-decoration: none;
+  color: rgba(17, 17, 17, 0.8);
+}
+.fa-bars {
+  position: absolute;
+  color: #ffffff;
+  transform: translateX(15px);
+  margin-top: 15px;
+  z-index: 1;
+}
+
+/* header_bottom-center */
+.header_bottom-center {
+}
+.nav_item {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px;
+}
+.nav_item:hover {
+  text-decoration: none;
+  color: #eeee22;
+}
+/* footer */
+.dash-footer {
+  width: 100%;
+  height: 1px;
+  background: #f6f6f6;
+}
+.footer_sections {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin: 0 100px;
+  padding-top: 20px;
+}
+/* section 1 */
+
+.img-logo-footer {
+  width: 283px;
+  height: 78px;
+}
+/* section 2 */
+.footer_section-page {
+  padding-left: 0;
+}
+.footer_section-page-items {
+  list-style: none;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer_section-page-items a {
+  color: #334862;
+  font-size: 15px;
+}
+.footer_section-page-items a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+/* section 3 */
+.footer_section-policy {
+  padding-left: 0;
+}
+.footer_section-policy-items {
+  list-style: none;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer_section-policy-items a {
+  color: rgba(51, 72, 98, 1);
+  font-size: 15px;
+}
+.footer_section-policy-items a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+/* section 4 */
+
+.footer_section-facebook {
+  padding-left: 0;
+}
+.footer_section-facebook-items {
+  list-style: none;
+  padding: 6px 0;
+}
+.footer_section-facebook-items a {
+  color: #334862;
+  font-size: 15px;
+}
+.footer_section-facebook-items a:hover {
+  text-decoration: none;
+  color: #000000;
+}
+
+/* responsive */
+/* PC */
+@media (min-width: 992px) {
+    .topbar_left,
+    .header_main-left,
+    .header_bottom-left {
+      margin-left: 134px;
+    }
+    .topbar_right {
+      margin-left: 380px;
+    }
+    .button_right,
+    .button_left,
+    .header_devices-mediums {
+      display: none;
+    }
+  }
+  
+  /* TABLET & MOBILE */
+  @media (max-width: 768px) {
+    /* thanh tìm kiếm */
+    .bar_search-device-medium {
+      display: flex;
+    }
+    .bar_search-device-medium-input {
+      border: 1px solid #ddd;
+      padding: 5px 5px;
+    }
+    .bar_seacrh-device-medium-icon {
+      background: #f47920;
+      border: 1px solid #ddd;
+      border-left: none;
+      padding: 5px 8px;
+    }
+    .bar_seacrh-device-medium-icon > i {
+      transform: translate(3px, 6px);
+    }
+    .bar_search-device-medium-input:focus-visible {
+      outline: #eaeaea solid 1px;
+    }
+    .bar_seacrh-device-medium-icon:focus {
+      outline: #eaeaea solid 1px;
+    }
+    .bar_seacrh-device-medium-icon:hover {
+      background: rgba(244, 121, 32, 0.9);
+    }
+  
+    /* btn_left & btn_right 'mobile-table' */
+    .icon-menu-left {
+      color: #777 !important;
+    }
+  
+    .icon-menu-right {
+      color: #f7f7f7;
+    }
+    .btn_menu-left {
+      width: 25px;
+      height: 30px;
+    }
+  
+    .btn_menu-right {
+      background-color: #0f8fda;
+      width: 35px;
+      height: 32px;
+      padding: 0 10px;
+      border-radius: 999px;
+    }
+    .topbar_right,
+    .header_main,
+    .header_bottom,
+    .bar-seacrh{
+      display: none;
+    }
+    .topbar_left{
+      display: flex;
+      justify-content: center;
+    }
+    .img_logo {
+      width: 253px;
+      height: 70px;
+    }
+  
+    .btn_menu-right {
+      margin-top: 24px;
+    }
+    /* sidebar-left */
+    .btn_menu_left {
+      position: relative;
+      font-size: 15px;
+      margin-top: 13px;
+    }
+    .sibar_menu_left {
+      padding: 30px 0;
+      position: fixed;
+      background: #fff;
+      border: 1px solid #ececec;
+      z-index: 99999;
+      top: 0;
+      bottom: 0;
+      left: -100%;
+    }
+    .sibar-menu-items {
+      border-bottom: 1px solid #ececec;
+    }
+    .bg-all-screen-left {
+      right: -100%;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      background: rgba(109, 109, 109, 0.5);
+    }
+    .close-menu-left {
+      font-size: 40px;
+      color: #fff;
+      position: absolute;
+      right: 10px;
+    }
+    .sibar-menu-items > a {
+      color: #666666d9;
+      font-size: 15px;
+      font-weight: 700;
+    }
+    /* sidebar-right */
+    .sibar_menu_right {
+      background: #f8f8f8;
+      position: fixed;
+      top: 0;
+      /* right:0; */
+      bottom: 0;
+      z-index: 99;
+      right: -100%;
+    }
+    .bg-all-screen-right {
+      position: fixed;
+      /* left: 0; */
+      top: 0;
+      bottom: 0;
+      background: rgba(109, 109, 109, 0.5);
+      left: -100%;
+    }
+    .close-menu-right {
+      position: absolute;
+      color: #6b6b6b;
+      font-size: 40px;
+      right: 20px;
+    }
+    .close-menu-right:hover {
+      color: #6b6b6b;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 40px;
+    }
+    .description-cart {
+      margin-top: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .status-cart {
+      text-align: center;
+    }
+    .title-cart {
+      color: #555555;
+      font-weight: 700;
+    }
+  
+    .status-cart {
+      color: #777;
+      font-size: 20px;
+    }
+  }
+  
+  /* TABLET */
+  @media (min-width: 576px) and (max-width: 768px) {
+    .topbar_left {
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .btn_menu-right {
+      margin-left: 160px;
+    }
+    .sibar_menu_left,
+    .sibar_menu_right {
+      height: 100vh;
+      width: 35vw;
+    }
+    .bg-all-screen-left,
+    .bg-all-screen-right {
+      width: 65vw;
+    }
+  }
+  /* MOBILE */
+  @media (max-width: 576px) {
+
+    .sibar_menu_left,
+    .sibar_menu_right {
+      height: 100vh;
+      width: 65vw;
+    }
+    .bg-all-screen-left,
+    .bg-all-screen-right {
+      width: 36vw;
+    }
+    
+  }
+  
+    </style>
+  </head>
+  <body>
+    <header id="header" class="container-fluid">
+        <!-- header top -->
+        <div class="topbar row">
+          <!-- topbar-left -->
+          <div class="col-lg-6">
+            <div class="topbar_left">
+              <ul>
+                <li class="list-unstyled">
+                  <span style="font-size: 12px"
+                    >Alphabook - Nhà sách online uy tín
+                  </span>
+                  <span style="font-size: 14px"
+                    >Hotline:<b style="color: red"> 0999000000</b></span
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- topbar-right -->
+          <div class="col-lg-6">
+            <div class="topbar_right">
+              <ul>
+                <li class="list-inline-item list-unstyled">
+                  <a href="#" class="topbar_right-text">Điều khoản</a>
+                  <div class="divider-vertical"></div>
+                </li>
+                <li class="list-inline-item list-unstyled">
+                  <a href="#" class="topbar_right-text">Thanh Toán</a>
+                  <div class="divider-vertical"></div>
+                </li>
+                <li class="list-inline-item list-unstyled">
+                  <a href="#" class="topbar_right-text">Liên hệ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+  
+        <!-- header main -->
+        <div class="header_main row justify-content-center align-items-center">
+          <!-- header_main-left -->
+          <div class="col-lg-4">
+            <div class="header_main-left">
+              <img
+                class="logo-img"
+                src="./assets/img/logo1.jpg"
+                alt="logo"
+              />
+            </div>
+          </div>
+          <!-- header_main-mid -->
+          <div class="col-lg-6">
+            <form class="bar-seacrh">
+              <input
+                class="btn_input"
+                type="text"
+                placeholder="Bạn muốn mua gì?"
+                name="search"
+              />
+              <button class="btn_icon" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+          <!-- header_main-right -->
+          <div class="col-lg-2">
+            <div class="header_main-right">
+              <a href="#" class="btn_cart">
+                <span class="btn_cart-title"> Giỏ hàng / 0 đ </span>
+                <i class="fa-solid fa-cart-shopping"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!--  header bottom-->
+        <div class="header_bottom row justify-content-center align-items-center" id="header_bottom">
+          <!-- header_bottom-left -->
+          <div class="col-lg-5">
+            <div class="header_bottom-left">
+              <i class="fa-solid fa-bars"></i>
+              <div class="dropdown">
+                <button class="dropbtn" >Danh mục sản phẩm</button>
+                <div class="dropdown-content">
+                  <a href="#">Sách kinh doanh</a>
+                  <a href="#">Sách thiếu nhi</a>
+                  <a href="#">Sách tiếng anh</a>
+                  <a href="#">Sách kỹ năng</a>
+                  <a href="#">Sách khởi nghiệp</a>
+                  <a href="#">Sách nuôi dạy con</a>
+                  <a href="#">Văn phòng phẩm</a>
+                  <a href="#">Sách văn học/truyện</a>
+                  <a href="#">Khuyến mãi</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- header_bottom-center -->
+          <div class="col-lg-7">
+            <div class="header_bottom-center" >
+              <ul class="nav">
+                <li><a class="nav_item" href="#">Trang chủ</a></li>
+                <li><a class="nav_item" href="#">Cửa hàng</a></li>
+                <li><a class="nav_item" href="#">Tin tức</a></li>
+                <li><a class="nav_item" href="#">Giới thiệu</a></li>
+                <li><a class="nav_item" href="#">Liên hệ</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+          <!-- header_tablet & header_mobile -->
+          <div class="row header_devices-mediums">
+            <div class="col-md-4 col-2">
+              <div class="btn_menu_left" onclick="show_menu1()">
+                <i class="fa-solid fa-bars icon-menu-left"></i>
+              </div>
+              <div class="sibar_menu_left" id="menu1">
+                <div class="bg-all-screen-left" id="maunen1" onclick="hide_menu1()">
+                  <a class="close-menu-left" onclick="hide_menu1()" href="#">&times;</a>
+                </div>
+                <ul class="list-unstyled">
+                  <li class="sibar-menu-items p-3">
+                    <form class="bar_search-device-medium" action="" >
+                      <input class="bar_search-device-medium-input" type="text" placeholder="bạn muốn mua gì" />
+                      <button class="bar_seacrh-device-medium-icon">
+                        <i
+                          style="color: #fff"
+                          class="fa-solid fa-magnifying-glass"
+                        ></i>
+                      </button>
+                    </form>
+                  </li>
+                  <li class="sibar-menu-items p-3">
+                    <a href="">Trang chủ</a>
+                  </li>
+                  <li class="sibar-menu-items p-3">
+                    <a href="">Cửa hàng</a>
+                  </li>
+                  <li class="sibar-menu-items p-3">
+                    <a href="">Tin tức</a>
+                  </li>
+                  <li class="sibar-menu-items p-3">
+                    <a href="">Giới thiệu</a>
+                  </li>
+                  <li class="sibar-menu-items p-3">
+                    <a href="">Liên hệ</a>
+                  </li>
+                  <li class="sibar-menu-items p-3">
+                    <a href="">Đăng nhập</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 col-8">
+              <div class="menu-center">
+                <img
+                  class="img_logo"
+                  src="./assets/img/logo2.jpg"
+                  alt=""
+                />
+              </div>
+            </div>
+            <div class="col-md-4 col-2">
+              <div class="btn_menu-right" onclick="show_menu2()">
+                <i class="fa-solid fa-cart-shopping icon-menu-right"></i>
+              </div>
+              <div class="sibar_menu_right" id="menu2">
+                <a class="close-menu-right" onclick="hide_menu2()"  href="#">&times;</a>
+                <div class="description-cart">
+                  <span class="title-cart">GIỎ HÀNG</span>
+                  <div class="divider"></div>
+                  <span class="status-cart">Chưa có sản phẩm trong giỏ hàng</span>
+                </div>
+                <div class="bg-all-screen-right" id="maunen2" onclick="hide_menu2()">
+                </div>
+            </div>
+            </div>
+          </div>
+      </header>
+      <div class="main">
+        <div class="main_content container">
+          <h2>Chính sách bảo mật</h2>
+          <p><strong>1. Mục đích và phạm vi thu thập thông tin:</strong></p>
+          <p>Để truy cập và sử dụng một số dịch vụ tại website, bạn có thể sẽ được yêu cầu đăng ký với chúng tôi thông tin cá nhân (Email, Họ tên, Số ĐT liên lạc…). Mọi thông tin khai báo phải đảm bảo tính chính xác và hợp pháp. Chúng tôi không chịu mọi trách nhiệm liên quan đến pháp luật của thông tin khai báo.</p>
+          <p>Chúng tôi thu thập và sử dụng thông tin cá nhân bạn với mục đích phù hợp và hoàn toàn tuân thủ nội dung của “Chính sách bảo mật” này. Khi cần thiết, chúng tôi có thể sử dụng những thông tin này để liên hệ trực tiếp với bạn dưới các hình thức như: Gởi thư ngỏ, đơn đặt hàng, thư cảm ơn, thông tin về kỹ thuật và bảo mật…</p>
+          <p>Trong một số trường hợp, chúng tôi có thể thuê một đơn vị độc lập để tiến hành các dự án nghiên cứu thị trường và khi đó thông tin của bạn sẽ được cung cấp cho đơn vị này để tiến hành dự án. Bên thứ ba này sẽ bị ràng buộc bởi một thỏa thuận về bảo mật mà theo đó họ chỉ được phép sử dụng những thông tin được cung cấp cho mục đích hoàn thành dự án.</p>
+          <p><strong>2. Phạm vi sử dụng thông tin:</strong></p>
+          <p>– Website thu thập và sử dụng thông tin cá nhân quý khách với mục đích phù hợp và hoàn toàn tuân thủ nội dung của “Chính sách bảo mật” này.</p>
+          <p>– Khi cần thiết, chúng tôi có thể sử dụng những thông tin này để liên hệ trực tiếp với bạn dưới các hình thức như: gởi thư ngỏ, đơn đặt hàng, thư cảm ơn, thông tin về kỹ thuật và bảo mật, quý khách có thể nhận được thư định kỳ cung cấp thông tin sản phẩm, dịch vụ mới, thông tin về các sự kiện sắp tới hoặc thông tin tuyển dụng nếu quý khách đăng kí nhận email thông báo.</p>
+          <p><strong>3. Thời gian lưu trữ thông tin:</strong></p>
+          <p>Ngoại trừ các trường hợp về sử dụng thông tin cá nhân như đã nêu trong chính sách này, chúng tôi cam kết sẽ không tiết lộ thông tin cá nhân bạn ra ngoài.</p>
+          <p>Thông tin sẽ được lưu trữ vĩnh viễn cho đến kh quý khách không sử dụng dịch vụ của chúng tôi nữa.</p>
+          <p><strong>4. Địa chỉ của đơn vị thu thập và quản lý thông tin cá nhân:</strong></p>
+          <p>ABCBOok.com</p>
+          <p>Địa chỉ : Phường Kiến Hưng, Quận Hà Đông, Thành phố Hà Nội</p>
+          <p><strong>5. Phương tiện và công cụ để người dùng tiếp cận và chỉnh sửa dữ liệu cá nhân của mình:</strong></p>
+          <p>Bất cứ thời điểm nào bạn cũng có thể truy cập và chỉnh sửa những thông tin cá nhân của mình theo các links thích hợp mà chúng tôi cung cấp.</p>
+          <p><strong>6. Cam kết bảo mật thông tin cá nhân khách hàng:</strong></p>
+          <p>Chúng tôi cam kết bảo mật thông tin cá nhân của bạn bằng mọi cách thức có thể. Chúng tôi sẽ sử dụng nhiều công nghệ bảo mật thông tin khác nhau nhằm bảo vệ thông tin này không bị truy lục, sử dụng hoặc tiết lộ ngoài ý muốn.</p>
+          <p>Chúng tôi khuyến cáo bạn nên bảo mật các thông tin liên quan đến mật khẩu truy xuất của bạn và không nên chia sẻ với bất kỳ người nào khác. Nếu sử dụng máy tính chung nhiều người, bạn nên đăng xuất, hoặc thoát hết tất cả cửa sổ Website đang mở.</p>
+        </div>
+      </div>
+      <div class="dash-footer"></div>
+      <footer id="footer" class="container mt-3">
+        <div class="row">
+          <div class="col-lg-3 col-md-12 col-12">
+            <img
+              src="./assets/img/logo1.jpg"
+              alt=""
+              class="img-logo-footer"
+            />
+            <br />
+            <p>490A, Điện Biên Phủ, P.21, Q.Bình Thạnh</p>
+            <p>Hotline: 0999000000</p>
+            <p>Email: email@gmail.com</p>
+          </div>
+          <div class="col-lg-3 col-md-12 col-12">
+            <span class="style-title">GIỚI THIỆU</span>
+            <div class="divider"></div>
+            <ul class="footer_section-page">
+              <li class="footer_section-page-items"><a href="">Trang chủ</a></li>
+              <li class="footer_section-page-items"><a href="">Cửa hàng</a></li>
+              <li class="footer_section-page-items"><a href="">Tin tức</a></li>
+              <li class="footer_section-page-items"><a href="">Giới thiệu</a></li>
+              <li class="footer_section-page-items"><a href="">Liên hệ</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-12 col-12">
+            <span class="style-title">HƯỚNG DẪN, HỖ TRỢ</span>
+            <div class="divider"></div>
+            <ul class="footer_section-policy">
+              <li class="footer_section-policy-items">
+                <a href="">Điều khoản sử dụng</a>
+              </li>
+              <li class="footer_section-policy-items">
+                <a href="">Chính sách vận chuyển</a>
+              </li>
+              <li class="footer_section-policy-items">
+                <a href="">Chính sách đổi hoàn tiền</a>
+              </li>
+              <li class="footer_section-policy-items">
+                <a href="">Chính sách thanh toán</a>
+              </li>
+              <li class="footer_section-policy-items">
+                <a href="">Chính sách bảo mật</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-lg-3 col-md-12 col-12">
+            <span class="style-title">FANPAGE FACEBOOK</span>
+            <div class="divider"></div>
+            <ul class="footer_section-facebook">
+              <li class="footer_section-facebook-items">
+                <a href="">nhóm sách</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+      <script>
+        // ẩn hiện danh mục sản phẩm
+        $(".dropbtn").click(function(){
+          $(".dropdown-content").toggle();
+        });
+      
+        // ẩn hiện menu điện thoại và máy tính bảng
+        function show_menu1() {
+          document.getElementById("menu1").style.left = "0px";
+          document.getElementById("maunen1").style.right = "0px";
+        }
+        function hide_menu1() {
+          document.getElementById("menu1").style.left = "-100%";
+          document.getElementById("maunen1").style.right = "-100%";
+        }
+        function show_menu2() {
+          document.getElementById("menu2").style.right = "0px";
+          document.getElementById("maunen2").style.left = "0px";
+        }
+        function hide_menu2() {
+          document.getElementById("menu2").style.right = "-100%";
+          document.getElementById("maunen2").style.left = "-100%";
+        }
+        // dính navbar lên cùng khi cuộn lên
+        window.onscroll = function() {myFunction()};
+
+          var main = document.getElementById("main");// truy xuất đến phần tử có id là main
+          var sticky = main.offsetTop;// lấy khoảng cách từ trên đầu trình duyệt đến mép trên của phần tử có id là main gán cho bằng biến sticky
+        function myFunction() {
+          // pageYOffset là khoảng cách theo chiều dọc tính từ trên đầu trình duyệt đến mép trên của thanh cuộn gióng qua-thanh cuộn có thể kéo lên xuống
+           if (window.pageYOffset >= sticky) {//
+             header_bottom.classList.add("sticky")// thêm class sticky cho header_bottom
+          } else {
+           header_bottom.classList.remove("sticky"); //xóa class sticky cho header_bottom
+          }
+        }
+      </script>
+  </body>
+</html>
+
